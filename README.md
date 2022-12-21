@@ -20,7 +20,7 @@ git clone https://github.com/nessshon/to-json-bot
 Go to the project folder
 
 ```bash
-cd telegram-bot-template
+cd to-json-bot
 ```
 
 Create environment variables file
@@ -73,15 +73,15 @@ nano .env
 
 6. Copy telegram-bot.service to /lib/systemd/system/
    ```bash
-   sudo cp telegram-bot.service /lib/systemd/system/
+   sudo cp telegram-bot.service /lib/systemd/system/to-json-bot.service
    ```
 7. Enable autostart on boot
    ```bash
-   sudo systemctl enable telegram-bot.service
+   sudo systemctl enable to-json-bot.service
    ```
 8. Launch Bot
    ```bash
-   sudo systemctl start telegram-bot.service
+   sudo systemctl start to-json-bot.service
    ```
 
 ### Environment variables reference

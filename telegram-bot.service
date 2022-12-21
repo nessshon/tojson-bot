@@ -1,5 +1,5 @@
 [Unit]
-Description=Telegram-Bot
+Description=To-Json-Bot
 After=syslog.target
 After=network.target
 

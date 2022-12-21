@@ -7,7 +7,7 @@ from aiogram.utils.exceptions import (MessageCantBeEdited, MessageToEditNotFound
 
 async def edit_message(message: Message, text: str,
                        reply_markup: InlineKeyboardMarkup | None = None,
-                       disable_web_page_preview: bool = None) -> Message:
+                       disable_web_page_preview: bool = False) -> Message:
     with suppress(MessageCantBeEdited, MessageToEditNotFound):
         return await message.edit_text(
             text, reply_markup=reply_markup,
