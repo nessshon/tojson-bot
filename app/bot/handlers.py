@@ -4,7 +4,7 @@ from aiogram import Dispatcher
 from aiogram.types import Message
 from aiogram.utils.markdown import hcode
 
-from .filters import IsPrivate
+from .filters import IsPrivate, IsGroup
 from .misc import rate_limit
 
 
@@ -32,6 +32,6 @@ async def message_to_json(message: Message):
 
 def register(dp: Dispatcher):
     dp.register_message_handler(
-        message_to_json, IsPrivate(),
+        message_to_json, IsPrivate() | IsGroup(),
         content_types="any"
     )
