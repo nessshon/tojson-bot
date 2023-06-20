@@ -8,6 +8,7 @@ from aiogram.types import (Message, BotCommand,
                            BotCommandScopeAllPrivateChats)
 
 from .texts import Text
+from .handlers import to_json
 from ..bot.filters import IsPrivate
 from ..bot.misc import rate_limit, delete_message, edit_message
 
@@ -24,7 +25,7 @@ async def command_start(message: Message):
     )
     text = Text(message.from_user.language_code).get("start")
     await edit_message(emoji, text.format(user_link))
-
+    await message.answer(to_json(dict(message)))
 
 @rate_limit(2)
 async def command_source(message: Message):
